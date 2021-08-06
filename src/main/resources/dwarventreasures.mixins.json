@@ -1,0 +1,16 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.dwarventreasures.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "CowEntityMixin",
+    "EntityMixin",
+    "PassiveEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

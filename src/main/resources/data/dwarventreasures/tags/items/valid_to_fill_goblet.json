@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:potion",
+    "minecraft:honey_bottle",
+    "dwarventreasures:copper_goblet_of_water",
+    "dwarventreasures:copper_goblet_of_milk",
+    "dwarventreasures:copper_goblet_of_honey"
+  ]
+}
