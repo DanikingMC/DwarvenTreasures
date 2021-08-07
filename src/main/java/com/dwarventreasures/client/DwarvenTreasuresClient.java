@@ -11,7 +11,7 @@ import net.minecraft.world.biome.BiomeKeys;
 public class DwarvenTreasuresClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModObjects.EMPTY_COPPER_GOBLET);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> tintIndex == 1 ? BuiltinRegistries.BIOME.get(BiomeKeys.OCEAN).getWaterColor() : 0xFFFFFFFF , ModObjects.COPPER_GOBLET_OF_WATER);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModObjects.EMPTY_COPPER_GOBLET, ModObjects.EMPTY_GOLDEN_GOBLET);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> tintIndex == 1 ? BuiltinRegistries.BIOME.get(BiomeKeys.OCEAN).getWaterColor() : 0xFFFFFFFF , ModObjects.COPPER_GOBLET_OF_WATER, ModObjects.GOLDEN_GOBLET_OF_WATER);
     }
 }

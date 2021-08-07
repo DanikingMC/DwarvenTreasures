@@ -1,23 +1,20 @@
-package com.dwarventreasures.common.item.copper;
+package com.dwarventreasures.common.item.gold;
 
 import com.dwarventreasures.common.item.util.EmptiedGobletItem;
 import com.dwarventreasures.common.registry.ModObjects;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
-public class EmptiedCopperGobletItem extends EmptiedGobletItem {
-
-    public EmptiedCopperGobletItem(Block block, Settings settings) {
+public class EmptiedGoldenGobletItem extends EmptiedGobletItem {
+    public EmptiedGoldenGobletItem(Block block, Settings settings) {
         super(block, settings);
     }
 
     @Override
     protected ItemStack findFilledWaterGoblet(ItemStack inputStack) {
-        if (inputStack.isOf(ModObjects.EMPTY_COPPER_GOBLET_ITEM)) {
-            return new ItemStack(ModObjects.COPPER_GOBLET_OF_WATER_ITEM);
+        if (inputStack.isOf(ModObjects.EMPTY_GOLDEN_GOBLET_ITEM)) {
+            return new ItemStack(ModObjects.GOLDEN_GOBLET_OF_WATER_ITEM);
         }
         return ItemStack.EMPTY;
     }
 }
-
-

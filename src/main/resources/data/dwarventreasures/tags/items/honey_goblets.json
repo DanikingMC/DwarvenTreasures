@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dwarventreasures:copper_goblet_of_honey"
+    "dwarventreasures:copper_goblet_of_honey",
+    "dwarventreasures:golden_goblet_of_honey"
+
   ]
 }

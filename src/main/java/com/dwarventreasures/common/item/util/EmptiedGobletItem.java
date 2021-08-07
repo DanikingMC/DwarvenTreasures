@@ -1,16 +1,19 @@
 package com.dwarventreasures.common.item.util;
 
-import com.dwarventreasures.common.registry.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidDrainable;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -21,6 +24,9 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public abstract class EmptiedGobletItem extends BlockItem {
 
@@ -63,29 +69,17 @@ public abstract class EmptiedGobletItem extends BlockItem {
         return TypedActionResult.fail(gobletStack);
     }
 
-    protected abstract ItemStack findFilledMilkGoblet(ItemStack inputStack, PlayerEntity player);
 
     protected abstract ItemStack findFilledWaterGoblet(ItemStack inputStack);
 
-
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        if (ModTags.MILK_GOBLETS.contains(user.getStackInHand(hand).getItem())) {
-            return ActionResult.PASS;
-        }
-        if (entity instanceof CowEntity) {
-            entity.playSound(SoundEvents.ENTITY_COW_MILK, 1.0F, 1.0F);
-            stack.decrement(1);
-            user.getInventory().insertStack(this.findFilledMilkGoblet(stack, user));
-            return ActionResult.SUCCESS;
-        }
-        return ActionResult.PASS;
+       return ActionResult.PASS;
     }
 
     private ItemStack fillGobletWithWater(ItemStack inputStack, PlayerEntity player, FluidState state) {
-       final Item item = inputStack.getItem();
        final ItemStack outputStack;
-        if (!state.isIn(FluidTags.WATER) || !ModTags.EMPTY_GOBLETS.contains(item)) {
+        if (!state.isIn(FluidTags.WATER)) {
             return inputStack;
         } else {
             if (!this.findFilledWaterGoblet(inputStack).isEmpty()) {
@@ -98,16 +92,8 @@ public abstract class EmptiedGobletItem extends BlockItem {
         return ItemUsage.exchangeStack(inputStack, player, outputStack);
     }
 
-    private ActionResult fillGobletWithMilk(PlayerEntity player, Hand hand) {
-        ItemStack inputStack = player.getStackInHand(hand);
-        final ItemStack outputStack;
-        if (!(inputStack.getItem() instanceof EmptiedGobletItem || this.findFilledMilkGoblet(inputStack, player).isEmpty())) {
-            return ActionResult.PASS;
-        } else {
-            outputStack = this.findFilledMilkGoblet(inputStack, player);
-        }
-        inputStack.decrement(1);
-        player.setStackInHand(hand, ItemUsage.exchangeStack(inputStack, player, outputStack));
-        return ActionResult.SUCCESS;
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(new TranslatableText("dwarventreasures.tooltip_empty"));
     }
 }

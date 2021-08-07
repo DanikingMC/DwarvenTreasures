@@ -3,5 +3,17 @@
   "block.dwarventreasures.copper_goblet": "Copper Goblet",
   "block.dwarventreasures.copper_goblet_of_water": "Copper Goblet",
   "block.dwarventreasures.copper_goblet_of_milk": "Copper Goblet",
-  "block.dwarventreasures.copper_goblet_of_honey": "Copper Goblet"
+  "block.dwarventreasures.copper_goblet_of_honey": "Copper Goblet",
+  "block.dwarventreasures.golden_goblet": "Golden Goblet",
+  "block.dwarventreasures.golden_goblet_of_water": "Golden Goblet",
+  "block.dwarventreasures.golden_goblet_of_milk": "Golden Goblet",
+  "block.dwarventreasures.golden_goblet_of_honey": "Golden Goblet",
+  "dwarventreasures.tooltip_empty": "Empty",
+  "dwarventreasures.tooltip_water": "Water",
+  "dwarventreasures.tooltip_milk": "Milk",
+  "dwarventreasures.tooltip_honey": "Honey",
+  "dwarventreasures.tooltip_lava": "Lava"
+
+
+
 }

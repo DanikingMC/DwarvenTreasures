@@ -4,8 +4,10 @@
   "package": "com.dwarventreasures.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "BeehiveBlockMixin",
     "CowEntityMixin",
     "EntityMixin",
+    "GoatEntityMixin",
     "PassiveEntityMixin"
   ],
   "client": [

@@ -3,8 +3,12 @@
   "values": [
     "minecraft:potion",
     "minecraft:honey_bottle",
+    "minecraft:milk_bucket",
+    "minecraft:water_bucket",
     "dwarventreasures:copper_goblet_of_water",
     "dwarventreasures:copper_goblet_of_milk",
-    "dwarventreasures:copper_goblet_of_honey"
+    "dwarventreasures:copper_goblet_of_honey",
+    "dwarventreasures:golden_goblet_of_water"
+
   ]
 }
