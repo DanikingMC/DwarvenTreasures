@@ -4,6 +4,8 @@
     "minecraft:bucket",
     "minecraft:glass_bottle",
     "dwarventreasures:copper_goblet",
-    "dwarventreasures:golden_goblet"
+    "dwarventreasures:golden_goblet",
+    "dwarventreasures:debris_goblet",
+    "dwarventreasures:netherite_goblet"
   ]
 }

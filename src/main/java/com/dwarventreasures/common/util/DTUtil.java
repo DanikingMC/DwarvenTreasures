@@ -29,6 +29,10 @@ public class DTUtil {
             return new ItemStack(ModObjects.COPPER_GOBLET_OF_MILK_ITEM);
         } else if (inputStack.isOf(ModObjects.EMPTY_GOLDEN_GOBLET_ITEM)) {
             return new ItemStack(ModObjects.GOLDEN_GOBLET_OF_MILK_ITEM);
+        } else if (inputStack.isOf(ModObjects.EMPTY_DEBRIS_GOBLET_ITEM)) {
+            return new ItemStack(ModObjects.DEBRIS_GOBLET_OF_MILK_ITEM);
+        } else if (inputStack.isOf(ModObjects.EMPTY_NETHERITE_GOBLET_ITEM)) {
+            return new ItemStack(ModObjects.NETHERITE_GOBLET_OF_MILK_ITEM);
         } else {
             return ItemStack.EMPTY;
         }

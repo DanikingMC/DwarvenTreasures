@@ -2,7 +2,8 @@
   "replace": false,
   "values": [
     "dwarventreasures:copper_goblet_of_milk",
-    "dwarventreasures:golden_goblet_of_milk"
-
+    "dwarventreasures:golden_goblet_of_milk",
+    "dwarventreasures:debris_goblet_of_milk",
+    "dwarventreasures:netherite_goblet_of_milk"
   ]
 }

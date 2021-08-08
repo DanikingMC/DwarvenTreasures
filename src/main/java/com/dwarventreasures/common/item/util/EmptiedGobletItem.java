@@ -1,5 +1,6 @@
 package com.dwarventreasures.common.item.util;
 
+import com.dwarventreasures.common.registry.ModObjects;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidDrainable;
@@ -10,7 +11,6 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -54,13 +54,14 @@ public abstract class EmptiedGobletItem extends BlockItem {
                     world.emitGameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
                     final FluidState fluidState = blockState.getFluidState();
                     if (fluidState.isIn(FluidTags.WATER)) {
-                        //they are all valid for water
                         fluidDrainable.tryDrainFluid(world, blockPos, blockState);
                         fluidDrainable.getBucketFillSound().ifPresent((sound) -> user.playSound(sound, 1.0F, 1.0F));
-                        return TypedActionResult.success(fillGobletWithWater(gobletStack, user, fluidState), world.isClient());
+                        return TypedActionResult.success(this.fillGobletWithWater(gobletStack, user, fluidState), world.isClient());
                     }
                     if (fluidState.isIn(FluidTags.LAVA)) {
-
+                        fluidDrainable.tryDrainFluid(world, blockPos, blockState);
+                        fluidDrainable.getBucketFillSound().ifPresent((sound) -> user.playSound(sound, 1.0F, 1.0F));
+                        return TypedActionResult.success(this.fillGobletWithLava(gobletStack, user, fluidState), world.isClient());
                     }
                 }
                 return TypedActionResult.fail(gobletStack);
@@ -88,7 +89,30 @@ public abstract class EmptiedGobletItem extends BlockItem {
                 outputStack = inputStack;
             }
         }
-        player.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+        return ItemUsage.exchangeStack(inputStack, player, outputStack);
+    }
+
+    private ItemStack findFilledLavaGoblet(ItemStack inputStack) {
+        if (inputStack.isOf(ModObjects.EMPTY_DEBRIS_GOBLET_ITEM)) {
+            return new ItemStack(ModObjects.DEBRIS_GOBLET_OF_LAVA_ITEM);
+        } else if (inputStack.isOf(ModObjects.EMPTY_NETHERITE_GOBLET_ITEM)) {
+            return new ItemStack(ModObjects.NETHERITE_GOBLET_OF_LAVA_ITEM);
+        } else {
+            return ItemStack.EMPTY;
+        }
+    }
+
+    private ItemStack fillGobletWithLava(ItemStack inputStack, PlayerEntity player, FluidState state) {
+        final ItemStack outputStack;
+        if (!state.isIn(FluidTags.LAVA)) {
+            return inputStack;
+        } else {
+            if (!this.findFilledLavaGoblet(inputStack).isEmpty()) {
+                outputStack = this.findFilledLavaGoblet(inputStack);
+            } else {
+                outputStack = inputStack;
+            }
+        }
         return ItemUsage.exchangeStack(inputStack, player, outputStack);
     }
 

@@ -8,7 +8,16 @@
     "dwarventreasures:copper_goblet_of_water",
     "dwarventreasures:copper_goblet_of_milk",
     "dwarventreasures:copper_goblet_of_honey",
-    "dwarventreasures:golden_goblet_of_water"
-
+    "dwarventreasures:golden_goblet_of_water",
+    "dwarventreasures:golden_goblet_of_milk",
+    "dwarventreasures:golden_goblet_of_honey",
+    "dwarventreasures:debris_goblet_of_water",
+    "dwarventreasures:debris_goblet_of_milk",
+    "dwarventreasures:debris_goblet_of_honey",
+    "dwarventreasures:debris_goblet_of_lava",
+    "dwarventreasures:netherite_goblet_of_water",
+    "dwarventreasures:netherite_goblet_of_milk",
+    "dwarventreasures:netherite_goblet_of_honey",
+    "dwarventreasures:netherite_goblet_of_lava"
   ]
 }
