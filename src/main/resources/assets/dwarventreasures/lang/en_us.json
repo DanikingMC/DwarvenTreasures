@@ -18,12 +18,22 @@
   "block.dwarventreasures.netherite_goblet_of_milk": "Netherite Goblet",
   "block.dwarventreasures.netherite_goblet_of_honey": "Netherite Goblet",
   "block.dwarventreasures.netherite_goblet_of_lava": "Netherite Goblet",
+  "block.dwarventreasures.mithril_goblet": "Mithril Goblet",
+  "block.dwarventreasures.mithril_goblet_of_water": "Mithril Goblet",
+  "block.dwarventreasures.mithril_goblet_of_milk": "Mithril Goblet",
+  "block.dwarventreasures.mithril_goblet_of_honey": "Mithril Goblet",
+  "block.dwarventreasures.silver_goblet": "Silver Goblet",
+  "block.dwarventreasures.silver_goblet_of_water": "Silver Goblet",
+  "block.dwarventreasures.silver_goblet_of_milk": "Silver Goblet",
+  "block.dwarventreasures.silver_goblet_of_honey": "Silver Goblet",
+  "block.dwarventreasures.oceanic_gold_goblet": "Oceanic Gold Goblet",
+  "block.dwarventreasures.oceanic_gold_goblet_of_water": "Oceanic Gold Goblet",
+  "block.dwarventreasures.oceanic_gold_goblet_of_milk": "Oceanic Gold Goblet",
+  "block.dwarventreasures.oceanic_gold_goblet_of_honey": "Oceanic Gold Goblet",
   "dwarventreasures.tooltip_empty": "Empty",
   "dwarventreasures.tooltip_water": "Water",
   "dwarventreasures.tooltip_milk": "Milk",
   "dwarventreasures.tooltip_honey": "Honey",
-  "dwarventreasures.tooltip_lava": "Lava"
-
-
-
+  "dwarventreasures.tooltip_lava": "Lava",
+  "death.attack.drinking_lava": "%s didn't blow on their soup"
 }

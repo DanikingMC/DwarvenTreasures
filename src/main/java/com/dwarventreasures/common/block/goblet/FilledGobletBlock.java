@@ -1,12 +1,11 @@
 package com.dwarventreasures.common.block.goblet;
 
-import com.dwarventreasures.common.registry.ModObjects;
+import com.dwarventreasures.common.registry.DTObjects;
 import com.dwarventreasures.common.registry.ModTags;
 import com.dwarventreasures.common.util.DTUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -63,13 +62,10 @@ public abstract class FilledGobletBlock extends GobletBlock {
             }
             if (isGoingToDrink) {
                 if (this.type.equals(Type.LAVA)) {
-                    player.eatFood(world, new ItemStack(Items.POTATO));
-                    player.damage(DamageSource.ON_FIRE, player.getHealth() / 2);
-                    if (!player.isFireImmune()) {
-                        player.setFireTicks(200);
-                    }
+                   DTUtil.onDrinkingLava(player);
+                } else {
+                    tryToClearStatusEffects(world, player);
                 }
-                tryToClearStatusEffects(world, player);
                 player.playSound(SoundEvents.ENTITY_GENERIC_DRINK, 1.0F, 1.0F);
             } else {
                 this.playEmptyingGobletSound(player);
@@ -109,7 +105,7 @@ public abstract class FilledGobletBlock extends GobletBlock {
         }
         if (ModTags.HONEY_GOBLETS.contains(this.asItem())) {
             player.removeStatusEffect(StatusEffects.POISON);
-            player.eatFood(world, new ItemStack(ModObjects.COPPER_GOBLET_OF_HONEY));
+            player.eatFood(world, new ItemStack(DTObjects.COPPER_GOBLET_OF_HONEY));
         }
     }
 

@@ -1,6 +1,7 @@
 package com.dwarventreasures.common.item.util;
 
-import com.dwarventreasures.common.registry.ModObjects;
+import com.dwarventreasures.common.registry.DTObjects;
+import com.dwarventreasures.common.registry.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidDrainable;
@@ -59,9 +60,11 @@ public abstract class EmptiedGobletItem extends BlockItem {
                         return TypedActionResult.success(this.fillGobletWithWater(gobletStack, user, fluidState), world.isClient());
                     }
                     if (fluidState.isIn(FluidTags.LAVA)) {
-                        fluidDrainable.tryDrainFluid(world, blockPos, blockState);
-                        fluidDrainable.getBucketFillSound().ifPresent((sound) -> user.playSound(sound, 1.0F, 1.0F));
-                        return TypedActionResult.success(this.fillGobletWithLava(gobletStack, user, fluidState), world.isClient());
+                        if (ModTags.TAKES_LAVA.contains(gobletStack.getItem())) {
+                            fluidDrainable.tryDrainFluid(world, blockPos, blockState);
+                            fluidDrainable.getBucketFillSound().ifPresent((sound) -> user.playSound(sound, 1.0F, 1.0F));
+                            return TypedActionResult.success(this.fillGobletWithLava(gobletStack, user, fluidState), world.isClient());
+                        }
                     }
                 }
                 return TypedActionResult.fail(gobletStack);
@@ -93,10 +96,10 @@ public abstract class EmptiedGobletItem extends BlockItem {
     }
 
     private ItemStack findFilledLavaGoblet(ItemStack inputStack) {
-        if (inputStack.isOf(ModObjects.EMPTY_DEBRIS_GOBLET_ITEM)) {
-            return new ItemStack(ModObjects.DEBRIS_GOBLET_OF_LAVA_ITEM);
-        } else if (inputStack.isOf(ModObjects.EMPTY_NETHERITE_GOBLET_ITEM)) {
-            return new ItemStack(ModObjects.NETHERITE_GOBLET_OF_LAVA_ITEM);
+        if (inputStack.isOf(DTObjects.EMPTY_DEBRIS_GOBLET_ITEM)) {
+            return new ItemStack(DTObjects.DEBRIS_GOBLET_OF_LAVA_ITEM);
+        } else if (inputStack.isOf(DTObjects.EMPTY_NETHERITE_GOBLET_ITEM)) {
+            return new ItemStack(DTObjects.NETHERITE_GOBLET_OF_LAVA_ITEM);
         } else {
             return ItemStack.EMPTY;
         }

@@ -1,6 +1,6 @@
 package com.dwarventreasures.client;
 
-import com.dwarventreasures.common.registry.ModObjects;
+import com.dwarventreasures.common.registry.DTObjects;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -11,7 +11,7 @@ import net.minecraft.world.biome.BiomeKeys;
 public class DwarvenTreasuresClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModObjects.EMPTY_COPPER_GOBLET, ModObjects.EMPTY_GOLDEN_GOBLET, ModObjects.EMPTY_DEBRIS_GOBLET, ModObjects.EMPTY_NETHERITE_GOBLET);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> tintIndex == 1 ? BuiltinRegistries.BIOME.get(BiomeKeys.OCEAN).getWaterColor() : 0xFFFFFFFF , ModObjects.COPPER_GOBLET_OF_WATER, ModObjects.GOLDEN_GOBLET_OF_WATER, ModObjects.DEBRIS_GOBLET_OF_WATER, ModObjects.NETHERITE_GOBLET_OF_WATER);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), DTObjects.EMPTY_COPPER_GOBLET, DTObjects.EMPTY_GOLDEN_GOBLET, DTObjects.EMPTY_DEBRIS_GOBLET, DTObjects.EMPTY_NETHERITE_GOBLET, DTObjects.EMPTY_MITHRIL_GOBLET, DTObjects.EMPTY_SILVER_GOBLET, DTObjects.EMPTY_OCEANIC_GOLD_GOBLET);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> tintIndex == 1 ? BuiltinRegistries.BIOME.get(BiomeKeys.OCEAN).getWaterColor() : 0xFFFFFFFF , DTObjects.COPPER_GOBLET_OF_WATER, DTObjects.GOLDEN_GOBLET_OF_WATER, DTObjects.DEBRIS_GOBLET_OF_WATER, DTObjects.NETHERITE_GOBLET_OF_WATER, DTObjects.MITHRIL_GOBLET_OF_WATER, DTObjects.SILVER_GOBLET_OF_WATER, DTObjects.OCEANIC_GOLD_GOBLET_OF_WATER);
     }
 }

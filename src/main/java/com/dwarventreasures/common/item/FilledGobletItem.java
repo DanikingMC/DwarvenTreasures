@@ -1,6 +1,8 @@
 package com.dwarventreasures.common.item;
 
+import com.dwarventreasures.common.registry.DTObjects;
 import com.dwarventreasures.common.registry.ModTags;
+import com.dwarventreasures.common.util.DTUtil;
 import net.minecraft.block.Block;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
@@ -33,17 +35,23 @@ public class FilledGobletItem extends BlockItem {
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        final Item item = stack.getItem();
+
         if (this.honey) {
             super.finishUsing(stack, world, user);
-        }
-        if (!world.isClient) {
-            if (ModTags.MILK_GOBLETS.contains(stack.getItem())) {
-                user.clearStatusEffects();
-            }
-            if (ModTags.HONEY_GOBLETS.contains(stack.getItem())) {
+            if (ModTags.HONEY_GOBLETS.contains(item)) {
                 user.removeStatusEffect(StatusEffects.POISON);
             }
         }
+        if (ModTags.MILK_GOBLETS.contains(item)) {
+            user.clearStatusEffects();
+        }
+
+
+        if (item == DTObjects.DEBRIS_GOBLET_OF_LAVA_ITEM || item == DTObjects.NETHERITE_GOBLET_OF_LAVA_ITEM) {
+            DTUtil.onDrinkingLava((PlayerEntity) user);
+        }
+
         final PlayerEntity playerEntity = user instanceof PlayerEntity ? (PlayerEntity) user : null;
         return emptyGoblet(playerEntity, user, stack, world);
     }

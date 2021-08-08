@@ -1,7 +1,7 @@
 package com.dwarventreasures.common.item;
 
 import com.dwarventreasures.common.item.util.EmptiedGobletItem;
-import com.dwarventreasures.common.registry.ModObjects;
+import com.dwarventreasures.common.registry.DTObjects;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
@@ -13,8 +13,8 @@ public class EmptiedDebrisGobletItem extends EmptiedGobletItem {
 
     @Override
     protected ItemStack findFilledWaterGoblet(ItemStack inputStack) {
-        if (inputStack.isOf(ModObjects.EMPTY_DEBRIS_GOBLET_ITEM)) {
-            return new ItemStack(ModObjects.DEBRIS_GOBLET_OF_WATER_ITEM);
+        if (inputStack.isOf(DTObjects.EMPTY_DEBRIS_GOBLET_ITEM)) {
+            return new ItemStack(DTObjects.DEBRIS_GOBLET_OF_WATER_ITEM);
         }
         return ItemStack.EMPTY;
     }

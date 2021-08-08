@@ -1,6 +1,7 @@
 package com.dwarventreasures.common.block.goblet;
 
 
+import com.dwarventreasures.common.registry.ModTags;
 import com.dwarventreasures.common.util.DTUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public abstract class EmptiedGobletBlock extends GobletBlock {
+
     public EmptiedGobletBlock(Settings settings) {
         super(settings);
     }
@@ -63,6 +65,10 @@ public abstract class EmptiedGobletBlock extends GobletBlock {
     protected abstract void getEmptyStack(PlayerEntity player, Hand hand, ItemStack toSwitch);
 
     protected void playEmptyingGobletSound(PlayerEntity player) {
-        player.playSound(SoundEvents.ITEM_BUCKET_EMPTY, 1.0F, 1.0F);
+        if (player.getMainHandStack().isIn(ModTags.HONEY_GOBLETS) || player.getMainHandStack().isOf(Items.HONEY_BOTTLE)) {
+            player.playSound(SoundEvents.ITEM_HONEY_BOTTLE_DRINK, 1.0F, 1.0F);
+        } else {
+            player.playSound(SoundEvents.ITEM_BUCKET_EMPTY, 1.0F, 1.0F);
+        }
     }
 }
