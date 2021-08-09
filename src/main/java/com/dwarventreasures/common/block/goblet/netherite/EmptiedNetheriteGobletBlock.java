@@ -4,16 +4,23 @@ import com.dwarventreasures.common.block.goblet.EmptiedGobletBlock;
 import com.dwarventreasures.common.registry.DTObjects;
 import com.dwarventreasures.common.util.DTUtil;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
+import net.minecraft.tag.FluidTags;
 import net.minecraft.util.Hand;
 
 public class EmptiedNetheriteGobletBlock extends EmptiedGobletBlock {
     public EmptiedNetheriteGobletBlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected boolean canPlaceGoblet(BlockState state) {
+        return (!state.getFluidState().isIn(FluidTags.WATER));
     }
 
 

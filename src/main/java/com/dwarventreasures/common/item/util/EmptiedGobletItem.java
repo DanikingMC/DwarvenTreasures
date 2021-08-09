@@ -60,7 +60,7 @@ public abstract class EmptiedGobletItem extends BlockItem {
                         return TypedActionResult.success(this.fillGobletWithWater(gobletStack, user, fluidState), world.isClient());
                     }
                     if (fluidState.isIn(FluidTags.LAVA)) {
-                        if (ModTags.TAKES_LAVA.contains(gobletStack.getItem())) {
+                        if (gobletStack.isIn(ModTags.TAKES_LAVA)) {
                             fluidDrainable.tryDrainFluid(world, blockPos, blockState);
                             fluidDrainable.getBucketFillSound().ifPresent((sound) -> user.playSound(sound, 1.0F, 1.0F));
                             return TypedActionResult.success(this.fillGobletWithLava(gobletStack, user, fluidState), world.isClient());
