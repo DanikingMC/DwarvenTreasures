@@ -1,6 +1,7 @@
 package com.dwarventreasures.common.registry;
 
 import com.dwarventreasures.common.DwarvenTreasures;
+import com.dwarventreasures.common.block.goblet.CoinPileBlock;
 import com.dwarventreasures.common.block.goblet.copper.CopperGobletHoneyBlock;
 import com.dwarventreasures.common.block.goblet.copper.CopperGobletMilkBlock;
 import com.dwarventreasures.common.block.goblet.copper.CopperGobletWaterBlock;
@@ -50,6 +51,8 @@ public class DTObjects {
     public static final Item COPPER_GOBLET_OF_MILK_ITEM = create("copper_goblet_of_milk", new FilledGobletItem(COPPER_GOBLET_OF_MILK, group().maxCount(1), EMPTY_COPPER_GOBLET_ITEM));
     public static final Block COPPER_GOBLET_OF_HONEY = create("copper_goblet_of_honey", new CopperGobletHoneyBlock(gobletBlock()), false);
     public static final Item COPPER_GOBLET_OF_HONEY_ITEM = create("copper_goblet_of_honey", new FilledGobletItem(COPPER_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_COPPER_GOBLET_ITEM, true));
+    public static final Item COPPER_COIN = create("copper_coin", new Item(group()));
+    public static final Block COPPER_COIN_PILE = create("copper_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //golden
     public static final Block EMPTY_GOLDEN_GOBLET = create("golden_goblet", new EmptiedGoldenGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_GOLDEN_GOBLET_ITEM = create("golden_goblet", new EmptiedGoldenGobletItem(EMPTY_GOLDEN_GOBLET, group().maxCount(16)));
@@ -59,6 +62,8 @@ public class DTObjects {
     public static final Item GOLDEN_GOBLET_OF_MILK_ITEM = create("golden_goblet_of_milk", new FilledGobletItem(GOLDEN_GOBLET_OF_MILK, group().maxCount(1), EMPTY_GOLDEN_GOBLET_ITEM));
     public static final Block GOLDEN_GOBLET_OF_HONEY = create("golden_goblet_of_honey", new GoldenGobletHoneyBlock(gobletBlock()), false);
     public static final Item GOLDEN_GOBLET_OF_HONEY_ITEM = create("golden_goblet_of_honey", new FilledGobletItem(GOLDEN_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_GOLDEN_GOBLET_ITEM, true));
+    public static final Item GOLD_COIN = create("gold_coin", new Item(group()));
+    public static final Block GOLD_COIN_PILE = create("gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //debris
     public static final Block EMPTY_DEBRIS_GOBLET = create("debris_goblet", new EmptiedDebrisGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_DEBRIS_GOBLET_ITEM = create("debris_goblet", new EmptiedDebrisGobletItem(EMPTY_DEBRIS_GOBLET, group().maxCount(16).fireproof()));
@@ -70,6 +75,8 @@ public class DTObjects {
     public static final Item DEBRIS_GOBLET_OF_HONEY_ITEM = create("debris_goblet_of_honey", new FilledGobletItem(DEBRIS_GOBLET_OF_HONEY, group().maxCount(1).fireproof().food(FoodComponents.HONEY_BOTTLE), EMPTY_DEBRIS_GOBLET_ITEM));
     public static final Block DEBRIS_GOBLET_OF_LAVA = create("debris_goblet_of_lava", new DebrisGobletLavaBlock(gobletBlock().luminance(value -> 15)), false);
     public static final Item DEBRIS_GOBLET_OF_LAVA_ITEM = create("debris_goblet_of_lava", new FilledGobletItem(DEBRIS_GOBLET_OF_LAVA, group().maxCount(1).fireproof(), EMPTY_DEBRIS_GOBLET_ITEM, true));
+    public static final Item DEBRIS_COIN = create("debris_coin", new Item(group()));
+    public static final Block DEBRIS_COIN_PILE = create("debris_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //netherite
     public static final Block EMPTY_NETHERITE_GOBLET = create("netherite_goblet", new EmptiedNetheriteGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_NETHERITE_GOBLET_ITEM = create("netherite_goblet", new EmptiedNetheriteGobletItem(EMPTY_NETHERITE_GOBLET, group().maxCount(16).fireproof()));
@@ -81,6 +88,8 @@ public class DTObjects {
     public static final Item NETHERITE_GOBLET_OF_HONEY_ITEM = create("netherite_goblet_of_honey", new FilledGobletItem(NETHERITE_GOBLET_OF_HONEY, group().maxCount(1).fireproof().food(FoodComponents.HONEY_BOTTLE), EMPTY_NETHERITE_GOBLET_ITEM));
     public static final Block NETHERITE_GOBLET_OF_LAVA = create("netherite_goblet_of_lava", new NetheriteGobletLavaBlock(gobletBlock().luminance(value -> 15)), false);
     public static final Item NETHERITE_GOBLET_OF_LAVA_ITEM = create("netherite_goblet_of_lava", new FilledGobletItem(NETHERITE_GOBLET_OF_LAVA, group().maxCount(1).fireproof(), EMPTY_NETHERITE_GOBLET_ITEM, true));
+    public static final Item NETHERITE_COIN = create("netherite_coin", new Item(group()));
+    public static final Block NETHERITE_COIN_PILE = create("netherite_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //mithril
     public static final Block EMPTY_MITHRIL_GOBLET = create("mithril_goblet", new EmptiedMithrilGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_MITHRIL_GOBLET_ITEM = create("mithril_goblet", new EmptiedMithrilGobletItem(EMPTY_MITHRIL_GOBLET, group().maxCount(16)));
@@ -91,6 +100,8 @@ public class DTObjects {
     public static final Block MITHRIL_GOBLET_OF_HONEY = create("mithril_goblet_of_honey", new MithrilGobletHoneyBlock(gobletBlock()), false);
     public static final Item MITHRIL_GOBLET_OF_HONEY_ITEM = create("mithril_goblet_of_honey", new FilledGobletItem(MITHRIL_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_MITHRIL_GOBLET_ITEM, true));
     public static final Item MITHRIL_INGOT = create("mithril_ingot", new Item(group()));
+    public static final Item MITHRIL_COIN = create("mithril_coin", new Item(group()));
+    public static final Block MITHRIL_COIN_PILE = create("mithril_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //silver
     public static final Block EMPTY_SILVER_GOBLET = create("silver_goblet", new EmptiedSilverGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_SILVER_GOBLET_ITEM = create("silver_goblet", new EmptiedSilverGobletItem(EMPTY_SILVER_GOBLET, group().maxCount(16)));
@@ -100,6 +111,8 @@ public class DTObjects {
     public static final Item SILVER_GOBLET_OF_MILK_ITEM = create("silver_goblet_of_milk", new FilledGobletItem(SILVER_GOBLET_OF_MILK, group().maxCount(1), EMPTY_SILVER_GOBLET_ITEM));
     public static final Block SILVER_GOBLET_OF_HONEY = create("silver_goblet_of_honey", new SilverGobletHoneyBlock(gobletBlock()), false);
     public static final Item SILVER_GOBLET_OF_HONEY_ITEM = create("silver_goblet_of_honey", new FilledGobletItem(SILVER_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_SILVER_GOBLET_ITEM, true));
+    public static final Item SILVER_COIN = create("silver_coin", new Item(group()));
+    public static final Block SILVER_COIN_PILE = create("silver_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //oceanic gold
     public static final Block EMPTY_OCEANIC_GOLD_GOBLET = create("oceanic_gold_goblet", new EmptiedOceanicGoldGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_OCEANIC_GOLD_GOBLET_ITEM = create("oceanic_gold_goblet", new EmptiedOceanicGoldGobletItem(EMPTY_OCEANIC_GOLD_GOBLET, group().maxCount(16)));
@@ -109,7 +122,8 @@ public class DTObjects {
     public static final Item OCEANIC_GOLD_GOBLET_OF_MILK_ITEM = create("oceanic_gold_goblet_of_milk", new FilledGobletItem(OCEANIC_GOLD_GOBLET_OF_MILK, group().maxCount(1), EMPTY_OCEANIC_GOLD_GOBLET_ITEM));
     public static final Block OCEANIC_GOLD_GOBLET_OF_HONEY = create("oceanic_gold_goblet_of_honey", new OceanicGoldGobletHoneyBlock(gobletBlock()), false);
     public static final Item OCEANIC_GOLD_GOBLET_OF_HONEY_ITEM = create("oceanic_gold_goblet_of_honey", new FilledGobletItem(OCEANIC_GOLD_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_OCEANIC_GOLD_GOBLET_ITEM, true));
-
+    public static final Item OCEANIC_GOLD_COIN = create("oceanic_gold_coin", new Item(group()));
+    public static final Block OCEANIC_GOLD_COIN_PILE = create("oceanic_gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
 
     private static <T extends Item> T create(String name, T item) {
         ITEMS.put(item, new Identifier(DwarvenTreasures.MODID, name));
@@ -131,11 +145,12 @@ public class DTObjects {
     private static AbstractBlock.Settings gobletBlock() {
         return AbstractBlock.Settings.of(Material.METAL).strength(0.3F, 1.0F).nonOpaque();
     }
+    private static AbstractBlock.Settings coinPileBlock() {
+        return AbstractBlock.Settings.of(Material.DECORATION).ticksRandomly().strength(0.5F).requiresTool();
+    }
 
     public static void init() {
         BLOCKS.keySet().forEach(block -> Registry.register(Registry.BLOCK, BLOCKS.get(block), block));
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
     }
-
-
 }

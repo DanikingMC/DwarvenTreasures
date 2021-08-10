@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 7,
+          "weight": 5,
           "name": "dwarventreasures:copper_goblet",
           "functions": [
             {
@@ -20,7 +20,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 4,
+          "weight": 3,
           "name": "dwarventreasures:golden_goblet",
           "functions": [
             {
