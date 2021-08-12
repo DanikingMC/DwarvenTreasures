@@ -25,12 +25,14 @@ import com.dwarventreasures.common.block.goblet.silver.SilverGobletHoneyBlock;
 import com.dwarventreasures.common.block.goblet.silver.SilverGobletMilkBlock;
 import com.dwarventreasures.common.block.goblet.silver.SilverGobletWaterBlock;
 import com.dwarventreasures.common.item.*;
+import com.dwarventreasures.common.item.util.DTAxeItem;
+import com.dwarventreasures.common.item.util.DTHoeItem;
+import com.dwarventreasures.common.item.util.DTPickaxeItem;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.FoodComponents;
-import net.minecraft.item.Item;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -124,6 +126,16 @@ public class DTObjects {
     public static final Item OCEANIC_GOLD_GOBLET_OF_HONEY_ITEM = create("oceanic_gold_goblet_of_honey", new FilledGobletItem(OCEANIC_GOLD_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_OCEANIC_GOLD_GOBLET_ITEM, true));
     public static final Item OCEANIC_GOLD_COIN = create("oceanic_gold_coin", new Item(group()));
     public static final Block OCEANIC_GOLD_COIN_PILE = create("oceanic_gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    //armor
+    public static final Item MITHRIL_SWORD = create("mithril_sword", new SwordItem(DTMaterial.MITHRIL_TOOL, 3, -2.4F, group()));
+    public static final Item MITHRIL_PICKAXE = create("mithril_pickaxe", new DTPickaxeItem(DTMaterial.MITHRIL_TOOL, 1, -2.8F, group()));
+    public static final Item MITHRIL_AXE = create("mithril_axe", new DTAxeItem(DTMaterial.MITHRIL_TOOL, 5.0F, -3.0F, group()));
+    public static final Item MITHRIL_SHOVEL = create("mithril_shovel", new ShovelItem(DTMaterial.MITHRIL_TOOL, 1.5F, -3.0F, group()));
+    public static final Item MITHRIL_HOE = create("mithril_hoe", new DTHoeItem(DTMaterial.MITHRIL_TOOL, -3, 0.0F, group()));
+    public static final Item MITHRIL_HELMET = create("mithril_helmet", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.HEAD, group()));
+    public static final Item MITHRIL_CHESTPLATE = create("mithril_chestplate", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.CHEST, group()));
+    public static final Item MITHRIL_LEGGINGS = create("mithril_leggings", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.LEGS, group()));
+    public static final Item MITHRIL_BOOTS = create("mithril_boots", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.FEET, group()));
 
     private static <T extends Item> T create(String name, T item) {
         ITEMS.put(item, new Identifier(DwarvenTreasures.MODID, name));
