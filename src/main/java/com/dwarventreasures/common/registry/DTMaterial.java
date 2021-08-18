@@ -7,6 +7,7 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 
 public class DTMaterial {
 
@@ -28,7 +29,7 @@ public class DTMaterial {
 
         @Override
         public SoundEvent getEquipSound() {
-            return null;
+            return SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE;
         }
 
         @Override

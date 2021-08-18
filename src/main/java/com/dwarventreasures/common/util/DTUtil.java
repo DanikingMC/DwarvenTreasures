@@ -54,6 +54,7 @@ public class DTUtil {
      * @param inputStack empty goblet-
      * @return the matched milk goblet
      */
+    //TODO: FIND A BETTER WAY TO RETURN THESE
     public static ItemStack getMilkGobletFromInput(ItemStack inputStack) {
         if (inputStack.isOf(DTObjects.EMPTY_COPPER_GOBLET_ITEM)) {
             return new ItemStack(DTObjects.COPPER_GOBLET_OF_MILK_ITEM);

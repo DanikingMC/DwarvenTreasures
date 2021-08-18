@@ -1,40 +1,41 @@
 package com.dwarventreasures.common.registry;
 
 import com.dwarventreasures.common.DwarvenTreasures;
-import com.dwarventreasures.common.block.goblet.CoinPileBlock;
-import com.dwarventreasures.common.block.goblet.copper.CopperGobletHoneyBlock;
-import com.dwarventreasures.common.block.goblet.copper.CopperGobletMilkBlock;
-import com.dwarventreasures.common.block.goblet.copper.CopperGobletWaterBlock;
-import com.dwarventreasures.common.block.goblet.copper.EmptiedCopperGobletBlock;
-import com.dwarventreasures.common.block.goblet.debris.*;
-import com.dwarventreasures.common.block.goblet.gold.EmptiedGoldenGobletBlock;
-import com.dwarventreasures.common.block.goblet.gold.GoldenGobletHoneyBlock;
-import com.dwarventreasures.common.block.goblet.gold.GoldenGobletMilkBlock;
-import com.dwarventreasures.common.block.goblet.gold.GoldenGobletWaterBlock;
-import com.dwarventreasures.common.block.goblet.mithril.EmptiedMithrilGobletBlock;
-import com.dwarventreasures.common.block.goblet.mithril.MithrilGobletHoneyBlock;
-import com.dwarventreasures.common.block.goblet.mithril.MithrilGobletMilkBlock;
-import com.dwarventreasures.common.block.goblet.mithril.MithrilGobletWaterBlock;
-import com.dwarventreasures.common.block.goblet.netherite.*;
-import com.dwarventreasures.common.block.goblet.oceanic.EmptiedOceanicGoldGobletBlock;
-import com.dwarventreasures.common.block.goblet.oceanic.OceanicGoldGobletHoneyBlock;
-import com.dwarventreasures.common.block.goblet.oceanic.OceanicGoldGobletMilkBlock;
-import com.dwarventreasures.common.block.goblet.oceanic.OceanicGoldGobletWaterBlock;
-import com.dwarventreasures.common.block.goblet.silver.EmptiedSilverGobletBlock;
-import com.dwarventreasures.common.block.goblet.silver.SilverGobletHoneyBlock;
-import com.dwarventreasures.common.block.goblet.silver.SilverGobletMilkBlock;
-import com.dwarventreasures.common.block.goblet.silver.SilverGobletWaterBlock;
-import com.dwarventreasures.common.item.*;
-import com.dwarventreasures.common.item.util.DTAxeItem;
-import com.dwarventreasures.common.item.util.DTHoeItem;
-import com.dwarventreasures.common.item.util.DTPickaxeItem;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.*;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+    import com.dwarventreasures.common.block.goblet.CoinPileBlock;
+    import com.dwarventreasures.common.block.goblet.copper.CopperGobletHoneyBlock;
+    import com.dwarventreasures.common.block.goblet.copper.CopperGobletMilkBlock;
+    import com.dwarventreasures.common.block.goblet.copper.CopperGobletWaterBlock;
+    import com.dwarventreasures.common.block.goblet.copper.EmptiedCopperGobletBlock;
+    import com.dwarventreasures.common.block.goblet.debris.*;
+    import com.dwarventreasures.common.block.goblet.gold.EmptiedGoldenGobletBlock;
+    import com.dwarventreasures.common.block.goblet.gold.GoldenGobletHoneyBlock;
+    import com.dwarventreasures.common.block.goblet.gold.GoldenGobletMilkBlock;
+    import com.dwarventreasures.common.block.goblet.gold.GoldenGobletWaterBlock;
+    import com.dwarventreasures.common.block.goblet.mithril.EmptiedMithrilGobletBlock;
+    import com.dwarventreasures.common.block.goblet.mithril.MithrilGobletHoneyBlock;
+    import com.dwarventreasures.common.block.goblet.mithril.MithrilGobletMilkBlock;
+    import com.dwarventreasures.common.block.goblet.mithril.MithrilGobletWaterBlock;
+    import com.dwarventreasures.common.block.goblet.netherite.*;
+    import com.dwarventreasures.common.block.goblet.oceanic.EmptiedOceanicGoldGobletBlock;
+    import com.dwarventreasures.common.block.goblet.oceanic.OceanicGoldGobletHoneyBlock;
+    import com.dwarventreasures.common.block.goblet.oceanic.OceanicGoldGobletMilkBlock;
+    import com.dwarventreasures.common.block.goblet.oceanic.OceanicGoldGobletWaterBlock;
+    import com.dwarventreasures.common.block.goblet.silver.EmptiedSilverGobletBlock;
+    import com.dwarventreasures.common.block.goblet.silver.SilverGobletHoneyBlock;
+    import com.dwarventreasures.common.block.goblet.silver.SilverGobletMilkBlock;
+    import com.dwarventreasures.common.block.goblet.silver.SilverGobletWaterBlock;
+    import com.dwarventreasures.common.item.*;
+    import com.dwarventreasures.common.item.util.DTAxeItem;
+    import com.dwarventreasures.common.item.util.DTHoeItem;
+    import com.dwarventreasures.common.item.util.DTPickaxeItem;
+    import net.minecraft.block.AbstractBlock;
+    import net.minecraft.block.Block;
+    import net.minecraft.block.Blocks;
+    import net.minecraft.block.Material;
+    import net.minecraft.entity.EquipmentSlot;
+    import net.minecraft.item.*;
+    import net.minecraft.util.Identifier;
+    import net.minecraft.util.registry.Registry;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -104,6 +105,12 @@ public class DTObjects {
     public static final Item MITHRIL_INGOT = create("mithril_ingot", new Item(group()));
     public static final Item MITHRIL_COIN = create("mithril_coin", new Item(group()));
     public static final Block MITHRIL_COIN_PILE = create("mithril_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    public static final Block MITHRIL_BLOCK = create("mithril_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)), true);
+    public static final Block CHISELED_MITHRIL = create("chiseled_mithril", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)), true);
+    public static final Block POLISHED_MITHRIL = create("polished_mithril", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)), true);
+    public static final Block MITHRIL_PLATE = create("mithril_plate", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)), true);
+    public static final Block MITHRIL_TILE = create("mithril_tile", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)), true);
+    public static final Block INVERTED_MITHRIL_TILE = create("inverted_mithril_tile", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)), true);
     //silver
     public static final Block EMPTY_SILVER_GOBLET = create("silver_goblet", new EmptiedSilverGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_SILVER_GOBLET_ITEM = create("silver_goblet", new EmptiedSilverGobletItem(EMPTY_SILVER_GOBLET, group().maxCount(16)));
@@ -150,7 +157,7 @@ public class DTObjects {
         return block;
     }
 
-    private static Item.Settings group()     {
+    private static Item.Settings group() {
         return new Item.Settings().group(DwarvenTreasures.DWARVEN_TREASURES_GROUP);
     }
 

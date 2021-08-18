@@ -12,7 +12,6 @@ public class DwarvenTreasures implements ModInitializer {
 
     public static final String MODID = "dwarventreasures";
     public static final ItemGroup DWARVEN_TREASURES_GROUP = FabricItemGroupBuilder.build(new Identifier(MODID, MODID), () -> new ItemStack(DTObjects.EMPTY_MITHRIL_GOBLET_ITEM));
-    //TODO: REMEMBER TO ADD THE SILVER COIN RECIPE
 
     @Override
     public void onInitialize() {
