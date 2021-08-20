@@ -67,5 +67,6 @@
   "dwarventreasures.tooltip_lava": "Lava",
   "dwarventreasures.tooltip.slayer": "Slayer",
   "dwarventreasures.tooltip.kills_left": "KILLS LEFT: ",
+  "dwarventreasures.tooltip.attunement": "+12 Damage to %s",
   "death.attack.drinking_lava": "%s didn't blow on their soup"
 }
