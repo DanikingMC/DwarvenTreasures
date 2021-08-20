@@ -14,7 +14,6 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import tk.dwarventreasures.common.registry.DTObjects;
 
 import java.util.HashMap;
 import java.util.List;
@@ -54,8 +53,7 @@ public class MithrilSwordItem extends SwordItem implements DynamicAttributeTool 
                 //Check if we are ready to apply attunement
                 if (data.getByte("Kills") == KILLS_TO_UNLOCK_ATTUNEMENT) {
                     this.setAttunement(stack);//updates attunement boolean
-                    data.putString("EntityName", entityName);
-                    DTObjects.attackDamage = 15;//Name of the killed entity
+                    data.putString("EntityName", entityName);//Name of the killed entity
                 }
                 //Send messages to the player, when is almost reaching the max number of kills
                 ((PlayerEntity) attacker).sendMessage(new TranslatableText("dwarventreasures.tooltip.kills_left").append(Text.of(Integer.toString(KILLS_TO_UNLOCK_ATTUNEMENT - data.getByte("Kills")))), true);

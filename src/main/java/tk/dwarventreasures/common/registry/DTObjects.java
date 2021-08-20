@@ -42,7 +42,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DTObjects {
-    public static int attackDamage = 3;
+
     private static final Map<Block, Identifier> BLOCKS = new LinkedHashMap<>();
     private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
@@ -135,7 +135,7 @@ public class DTObjects {
     public static final Item OCEANIC_GOLD_COIN = create("oceanic_gold_coin", new Item(group()));
     public static final Block OCEANIC_GOLD_COIN_PILE = create("oceanic_gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //armor
-    public static final Item MITHRIL_SWORD = create("mithril_sword", new MithrilSwordItem(DTMaterial.MITHRIL_TOOL, attackDamage, -2.4F, group()));
+    public static final Item MITHRIL_SWORD = create("mithril_sword", new MithrilSwordItem(DTMaterial.MITHRIL_TOOL, 3, -2.4F, group()));
     public static final Item MITHRIL_PICKAXE = create("mithril_pickaxe", new DTPickaxeItem(DTMaterial.MITHRIL_TOOL, 1, -2.8F, group()));
     public static final Item MITHRIL_AXE = create("mithril_axe", new DTAxeItem(DTMaterial.MITHRIL_TOOL, 5.0F, -3.0F, group()));
     public static final Item MITHRIL_SHOVEL = create("mithril_shovel", new ShovelItem(DTMaterial.MITHRIL_TOOL, 1.5F, -3.0F, group()));
