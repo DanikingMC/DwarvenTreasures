@@ -1,7 +1,7 @@
 {
   "required": false,
   "minVersion": "0.8",
-  "package": "com.dwarventreasures.mixin",
+  "package": "tk.dwarventreasures.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "BeehiveBlockMixin",

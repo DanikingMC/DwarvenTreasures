@@ -19,10 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.dwarventreasures.common.DwarvenTreasures"
+      "tk.dwarventreasures.common.DwarvenTreasures"
     ],
     "client": [
-      "com.dwarventreasures.client.DwarvenTreasuresClient"
+      "tk.dwarventreasures.client.DwarvenTreasuresClient"
     ]
   },
   "mixins": [
