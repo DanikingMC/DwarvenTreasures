@@ -20,7 +20,7 @@ public class AttunedItemUtil {
      */
     private static final Map<String, Integer> TARGET = new HashMap<>();
 
-    private static final int REQUIRED_TARGETS = 16;
+    private static final int REQUIRED_TARGETS = 64;
 
     /**
      * @param test the item you want to test
