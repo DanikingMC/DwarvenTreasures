@@ -121,7 +121,7 @@ public class AttunedItemUtil {
     }
 
     public static void updateAttunementMessage(int i, NbtCompound stackNbt, PlayerEntity player) {
-        if (i == 4 || i == 8 || i ==  12) {
+        if (i == 16 || i == 32 || i ==  48) {
             int targetsLeft = REQUIRED_TARGETS - i;
             if (stackNbt.contains("killsCounter")) {
                 player.sendMessage(new TranslatableText("dwarventreasures.tooltip.kills_left").append(Integer.toString(targetsLeft)).formatted(Formatting.RED), true);
