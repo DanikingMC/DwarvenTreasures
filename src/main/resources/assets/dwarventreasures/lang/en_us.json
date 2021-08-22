@@ -65,8 +65,14 @@
   "dwarventreasures.tooltip_milk": "Milk",
   "dwarventreasures.tooltip_honey": "Honey",
   "dwarventreasures.tooltip_lava": "Lava",
-  "dwarventreasures.tooltip.slayer": "Slayer",
-  "dwarventreasures.tooltip.kills_left": "KILLS LEFT: ",
-  "dwarventreasures.tooltip.attunement": "+12 Damage to %s",
+  "dwarventreasures.tooltip.slayer": "-Slayer",
+  "dwarventreasures.tooltip.shatterer": "-Shatterer",
+  "dwarventreasures.tooltip.splitter": "-Splitter",
+  "dwarventreasures.tooltip.shifter": "-Shifter",
+  "dwarventreasures.tooltip.forager": "-Forager",
+  "dwarventreasures.tooltip.kills_left": "TARGETS LEFT: ",
+  "dwarventreasures.tooltip.attunement_damage": "+12 Damage to %s",
+  "dwarventreasures.tooltip.boosted_efficiency": "Boosted Efficiency when mining %s",
+  "dwarventreasures.tooltip.attune": "Attunement Gained!",
   "death.attack.drinking_lava": "%s didn't blow on their soup"
 }

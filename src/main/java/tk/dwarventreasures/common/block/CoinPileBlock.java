@@ -91,5 +91,4 @@ public class CoinPileBlock extends FallingBlock {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(COIN_PILE_LAYERS);
     }
-
 }

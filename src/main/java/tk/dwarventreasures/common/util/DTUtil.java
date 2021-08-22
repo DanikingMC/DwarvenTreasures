@@ -1,12 +1,12 @@
 package tk.dwarventreasures.common.util;
 
-import tk.dwarventreasures.common.registry.DTDamageSources;
-import tk.dwarventreasures.common.registry.DTObjects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.util.Hand;
+import tk.dwarventreasures.common.registry.DTDamageSources;
+import tk.dwarventreasures.common.registry.DTObjects;
 
 public class DTUtil {
 
@@ -74,5 +74,8 @@ public class DTUtil {
             return ItemStack.EMPTY;
         }
     }
+
+
+
 
 }

@@ -5,7 +5,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.FoodComponents;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import tk.dwarventreasures.common.DwarvenTreasures;
@@ -33,10 +36,7 @@ import tk.dwarventreasures.common.block.goblet.silver.SilverGobletHoneyBlock;
 import tk.dwarventreasures.common.block.goblet.silver.SilverGobletMilkBlock;
 import tk.dwarventreasures.common.block.goblet.silver.SilverGobletWaterBlock;
 import tk.dwarventreasures.common.item.*;
-import tk.dwarventreasures.common.item.tool.DTAxeItem;
-import tk.dwarventreasures.common.item.tool.DTHoeItem;
-import tk.dwarventreasures.common.item.tool.DTPickaxeItem;
-import tk.dwarventreasures.common.item.tool.MithrilSwordItem;
+import tk.dwarventreasures.common.item.tool.mithril.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -136,10 +136,10 @@ public class DTObjects {
     public static final Block OCEANIC_GOLD_COIN_PILE = create("oceanic_gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
     //armor
     public static final Item MITHRIL_SWORD = create("mithril_sword", new MithrilSwordItem(DTMaterial.MITHRIL_TOOL, 3, -2.4F, group()));
-    public static final Item MITHRIL_PICKAXE = create("mithril_pickaxe", new DTPickaxeItem(DTMaterial.MITHRIL_TOOL, 1, -2.8F, group()));
-    public static final Item MITHRIL_AXE = create("mithril_axe", new DTAxeItem(DTMaterial.MITHRIL_TOOL, 5.0F, -3.0F, group()));
-    public static final Item MITHRIL_SHOVEL = create("mithril_shovel", new ShovelItem(DTMaterial.MITHRIL_TOOL, 1.5F, -3.0F, group()));
-    public static final Item MITHRIL_HOE = create("mithril_hoe", new DTHoeItem(DTMaterial.MITHRIL_TOOL, -3, 0.0F, group()));
+    public static final Item MITHRIL_PICKAXE = create("mithril_pickaxe", new MithrilPickaxeItem(DTMaterial.MITHRIL_TOOL, 1, -2.8F, group()));
+    public static final Item MITHRIL_AXE = create("mithril_axe", new MithrilAxeItem(DTMaterial.MITHRIL_TOOL, 5.0F, -3.0F, group()));
+    public static final Item MITHRIL_SHOVEL = create("mithril_shovel", new MithrilShovelItem(DTMaterial.MITHRIL_TOOL, 1.5F, -3.0F, group()));
+    public static final Item MITHRIL_HOE = create("mithril_hoe", new MithrilHoeItem(DTMaterial.MITHRIL_TOOL, -3, 0.0F, group()));
     public static final Item MITHRIL_HELMET = create("mithril_helmet", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.HEAD, group()));
     public static final Item MITHRIL_CHESTPLATE = create("mithril_chestplate", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.CHEST, group()));
     public static final Item MITHRIL_LEGGINGS = create("mithril_leggings", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.LEGS, group()));
