@@ -1,4 +1,4 @@
-package tk.dwarventreasures.common.item;
+package tk.dwarventreasures.common.item.goblet;
 
 import tk.dwarventreasures.common.registry.DTObjects;
 import tk.dwarventreasures.common.registry.ModTags;

@@ -1,5 +1,6 @@
 package tk.dwarventreasures.common;
 
+import tk.dwarventreasures.common.registry.DTEnchantments;
 import tk.dwarventreasures.common.registry.DTLootTables;
 import tk.dwarventreasures.common.registry.DTObjects;
 import net.fabricmc.api.ModInitializer;
@@ -16,6 +17,7 @@ public class DwarvenTreasures implements ModInitializer {
     @Override
     public void onInitialize() {
         DTObjects.init();
+        DTEnchantments.init();
         DTLootTables.init();
     }
 }

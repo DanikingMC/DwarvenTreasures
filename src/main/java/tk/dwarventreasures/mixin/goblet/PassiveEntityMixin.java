@@ -1,4 +1,4 @@
-package tk.dwarventreasures.mixin;
+package tk.dwarventreasures.mixin.goblet;
 
 import net.minecraft.entity.passive.PassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;

@@ -4,11 +4,14 @@
   "package": "tk.dwarventreasures.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "BeehiveBlockMixin",
-    "CowEntityMixin",
-    "EntityMixin",
-    "GoatEntityMixin",
-    "PassiveEntityMixin"
+    "goblet.BeehiveBlockMixin",
+    "goblet.CowEntityMixin",
+    "goblet.EntityMixin",
+    "goblet.GoatEntityMixin",
+    "goblet.PassiveEntityMixin",
+    "trinket.EntityMixin",
+    "trinket.LivingEntityMixin",
+    "trinket.PlayerEntityMixin"
   ],
   "client": [
   ],

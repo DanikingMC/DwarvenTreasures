@@ -35,7 +35,9 @@ import tk.dwarventreasures.common.block.goblet.silver.EmptiedSilverGobletBlock;
 import tk.dwarventreasures.common.block.goblet.silver.SilverGobletHoneyBlock;
 import tk.dwarventreasures.common.block.goblet.silver.SilverGobletMilkBlock;
 import tk.dwarventreasures.common.block.goblet.silver.SilverGobletWaterBlock;
-import tk.dwarventreasures.common.item.*;
+import tk.dwarventreasures.common.item.MithrilWaistcoatItem;
+import tk.dwarventreasures.common.item.RingItem;
+import tk.dwarventreasures.common.item.goblet.*;
 import tk.dwarventreasures.common.item.tool.mithril.*;
 
 import java.util.LinkedHashMap;
@@ -57,6 +59,7 @@ public class DTObjects {
     public static final Item COPPER_GOBLET_OF_HONEY_ITEM = create("copper_goblet_of_honey", new FilledGobletItem(COPPER_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_COPPER_GOBLET_ITEM, true));
     public static final Item COPPER_COIN = create("copper_coin", new Item(group()));
     public static final Block COPPER_COIN_PILE = create("copper_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    public static final Item COPPER_RING = create("copper_ring", new RingItem(group().maxCount(1)));
     //golden
     public static final Block EMPTY_GOLDEN_GOBLET = create("golden_goblet", new EmptiedGoldenGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_GOLDEN_GOBLET_ITEM = create("golden_goblet", new EmptiedGoldenGobletItem(EMPTY_GOLDEN_GOBLET, group().maxCount(16)));
@@ -68,6 +71,7 @@ public class DTObjects {
     public static final Item GOLDEN_GOBLET_OF_HONEY_ITEM = create("golden_goblet_of_honey", new FilledGobletItem(GOLDEN_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_GOLDEN_GOBLET_ITEM, true));
     public static final Item GOLD_COIN = create("gold_coin", new Item(group()));
     public static final Block GOLD_COIN_PILE = create("gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    public static final Item GOLD_RING = create("gold_ring", new RingItem(group().maxCount(1)));
     //debris
     public static final Block EMPTY_DEBRIS_GOBLET = create("debris_goblet", new EmptiedDebrisGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_DEBRIS_GOBLET_ITEM = create("debris_goblet", new EmptiedDebrisGobletItem(EMPTY_DEBRIS_GOBLET, group().maxCount(16).fireproof()));
@@ -81,6 +85,7 @@ public class DTObjects {
     public static final Item DEBRIS_GOBLET_OF_LAVA_ITEM = create("debris_goblet_of_lava", new FilledGobletItem(DEBRIS_GOBLET_OF_LAVA, group().maxCount(1).fireproof(), EMPTY_DEBRIS_GOBLET_ITEM, true));
     public static final Item DEBRIS_COIN = create("debris_coin", new Item(group()));
     public static final Block DEBRIS_COIN_PILE = create("debris_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    public static final Item DEBRIS_RING = create("debris_ring", new RingItem(group().maxCount(1)));
     //netherite
     public static final Block EMPTY_NETHERITE_GOBLET = create("netherite_goblet", new EmptiedNetheriteGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_NETHERITE_GOBLET_ITEM = create("netherite_goblet", new EmptiedNetheriteGobletItem(EMPTY_NETHERITE_GOBLET, group().maxCount(16).fireproof()));
@@ -94,6 +99,7 @@ public class DTObjects {
     public static final Item NETHERITE_GOBLET_OF_LAVA_ITEM = create("netherite_goblet_of_lava", new FilledGobletItem(NETHERITE_GOBLET_OF_LAVA, group().maxCount(1).fireproof(), EMPTY_NETHERITE_GOBLET_ITEM, true));
     public static final Item NETHERITE_COIN = create("netherite_coin", new Item(group()));
     public static final Block NETHERITE_COIN_PILE = create("netherite_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    public static final Item NETHERITE_RING = create("netherite_ring", new RingItem(group().maxCount(1)));
     //mithril
     public static final Block EMPTY_MITHRIL_GOBLET = create("mithril_goblet", new EmptiedMithrilGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_MITHRIL_GOBLET_ITEM = create("mithril_goblet", new EmptiedMithrilGobletItem(EMPTY_MITHRIL_GOBLET, group().maxCount(16)));
@@ -112,6 +118,7 @@ public class DTObjects {
     public static final Block MITHRIL_PLATE = create("mithril_plate", new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)), true);
     public static final Block MITHRIL_TILE = create("mithril_tile", new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)), true);
     public static final Block INVERTED_MITHRIL_TILE = create("inverted_mithril_tile", new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)), true);
+    public static final Item MITHRIL_RING = create("mithril_ring", new RingItem(group().maxCount(1)));
     //silver
     public static final Block EMPTY_SILVER_GOBLET = create("silver_goblet", new EmptiedSilverGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_SILVER_GOBLET_ITEM = create("silver_goblet", new EmptiedSilverGobletItem(EMPTY_SILVER_GOBLET, group().maxCount(16)));
@@ -123,6 +130,7 @@ public class DTObjects {
     public static final Item SILVER_GOBLET_OF_HONEY_ITEM = create("silver_goblet_of_honey", new FilledGobletItem(SILVER_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_SILVER_GOBLET_ITEM, true));
     public static final Item SILVER_COIN = create("silver_coin", new Item(group()));
     public static final Block SILVER_COIN_PILE = create("silver_coin_pile", new CoinPileBlock(coinPileBlock()), true);
+    public static final Item SILVER_RING = create("silver_ring", new RingItem(group().maxCount(1)));
     //oceanic gold
     public static final Block EMPTY_OCEANIC_GOLD_GOBLET = create("oceanic_gold_goblet", new EmptiedOceanicGoldGobletBlock(gobletBlock()), false);
     public static final Item EMPTY_OCEANIC_GOLD_GOBLET_ITEM = create("oceanic_gold_goblet", new EmptiedOceanicGoldGobletItem(EMPTY_OCEANIC_GOLD_GOBLET, group().maxCount(16)));
@@ -134,7 +142,8 @@ public class DTObjects {
     public static final Item OCEANIC_GOLD_GOBLET_OF_HONEY_ITEM = create("oceanic_gold_goblet_of_honey", new FilledGobletItem(OCEANIC_GOLD_GOBLET_OF_HONEY, group().maxCount(1).food(FoodComponents.HONEY_BOTTLE), EMPTY_OCEANIC_GOLD_GOBLET_ITEM, true));
     public static final Item OCEANIC_GOLD_COIN = create("oceanic_gold_coin", new Item(group()));
     public static final Block OCEANIC_GOLD_COIN_PILE = create("oceanic_gold_coin_pile", new CoinPileBlock(coinPileBlock()), true);
-    //armor
+    public static final Item OCEANIC_GOLD_RING = create("oceanic_gold_ring", new RingItem(group().maxCount(1)));
+    //tools and equipment
     public static final Item MITHRIL_SWORD = create("mithril_sword", new MithrilSwordItem(DTMaterial.MITHRIL_TOOL, 3, -2.4F, group()));
     public static final Item MITHRIL_PICKAXE = create("mithril_pickaxe", new MithrilPickaxeItem(DTMaterial.MITHRIL_TOOL, 1, -2.8F, group()));
     public static final Item MITHRIL_AXE = create("mithril_axe", new MithrilAxeItem(DTMaterial.MITHRIL_TOOL, 5.0F, -3.0F, group()));
@@ -142,6 +151,7 @@ public class DTObjects {
     public static final Item MITHRIL_HOE = create("mithril_hoe", new MithrilHoeItem(DTMaterial.MITHRIL_TOOL, -3, 0.0F, group()));
     public static final Item MITHRIL_HELMET = create("mithril_helmet", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.HEAD, group()));
     public static final Item MITHRIL_CHESTPLATE = create("mithril_chestplate", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.CHEST, group()));
+    public static final Item MITHRIL_WAISTCOAT = create("mithril_waistcoat", new MithrilWaistcoatItem(group().maxCount(1)));
     public static final Item MITHRIL_LEGGINGS = create("mithril_leggings", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.LEGS, group()));
     public static final Item MITHRIL_BOOTS = create("mithril_boots", new ArmorItem(DTMaterial.MITHRIL_ARMOR, EquipmentSlot.FEET, group()));
 

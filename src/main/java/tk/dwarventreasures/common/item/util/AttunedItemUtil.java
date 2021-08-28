@@ -22,14 +22,6 @@ public class AttunedItemUtil {
 
     private static final int REQUIRED_TARGETS = 64;
 
-    /**
-     * @param test the item you want to test
-     * @return whether the item was attuned or not
-     */
-    public static boolean containsAttunement(ItemStack test) {
-        return test.getOrCreateNbt().getBoolean("Attunement");
-    }
-
     public static boolean containsSlayerTarget(ItemStack test) {
         return test.getOrCreateNbt().contains("slayerTarget");
     }
@@ -50,19 +42,6 @@ public class AttunedItemUtil {
             return false;
         }
         return test.getOrCreateNbt().getString("minerTarget").equals(target);
-    }
-
-    /**
-     * Stores the nbt data on the item you want to attune
-     *
-     * @param stack which is going to store the nbt
-     */
-    public static void setAttunement(ItemStack stack) {
-        stack.getOrCreateNbt().putBoolean("Attunement", true);
-    }
-
-    public static void setSecondAttunement(ItemStack stack) {
-        stack.getOrCreateNbt().putBoolean("SecondAttunement", true);
     }
 
     public static void sendAttunementMessage(PlayerEntity player, Formatting color) {
@@ -164,47 +143,4 @@ public class AttunedItemUtil {
             }
         }
     }
-
-
-    /**
-     * Used for mithril abilities.
-     *
-     * @param stack        mithril tool
-     * @param targetKey    name of the target
-     * @param player       who receives the message
-     * @param validToCount checks if the target it's valid to count
-     */
-    public static boolean attuneItem(final ItemStack stack, final String targetKey, PlayerEntity player, boolean validToCount) {
-//
-//        if (!AttunedItemUtil.isStackAttuned(stack) || stack.getOrCreateNbt().contains("secondCounter")) {
-//            final NbtCompound stackNbt = stack.getOrCreateNbt();
-//            /*
-//             * Resets the key
-//             * to avoid duplication within stacks
-//             */
-//            if (!stackNbt.contains("targetCounter")) {
-//                TARGET.put(targetKey, 0);
-//            }
-//            if (validToCount) {
-//                stackNbt.putInt("targetCounter", TARGET.getOrDefault(targetKey, 0) + 1);
-//                TARGET.put(targetKey, stackNbt.getInt("targetCounter"));
-//                updateAttunementMessage(stackNbt.getInt("targetCounter"), stackNbt, player);
-//                if (stackNbt.getInt("targetCounter") == REQUIRED_TARGETS) {
-//                    TARGET.put(targetKey, 0);//clears the attuned entry.
-//                    stackNbt.remove("targetCounter");//removes target counter from nbt
-//                    AttunedItemUtil.setAttunement(stack);//updates attune nbt
-//                    AttunedItemUtil.sendAttunementMessage(player, Formatting.AQUA);
-//                    stackNbt.putString("attunedTarget", targetKey);//sends the attuned target
-//                    return true;
-//                }
-//            }
-//        } else {
-//            return true;
-//        }
-//        return false;
-//    }
-        return false;
-    }
-
-
 }

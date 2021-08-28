@@ -13,5 +13,6 @@ public class ModTags {
     public static final Tag<Item> MILK_GOBLETS = TagRegistry.item(new Identifier(DwarvenTreasures.MODID, "milk_goblets"));
     public static final Tag<Item> HONEY_GOBLETS = TagRegistry.item(new Identifier(DwarvenTreasures.MODID, "honey_goblets"));
     public static final Tag<Item> TAKES_LAVA = TagRegistry.item(new Identifier(DwarvenTreasures.MODID, "takes_lava"));
+    public static final Tag<Item> RINGS = TagRegistry.item(new Identifier(DwarvenTreasures.MODID, "rings"));
 
 }
