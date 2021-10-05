@@ -67,9 +67,6 @@ public abstract class PlayerEntityMixin extends LivingEntityMixin {
                             entity.damage(DamageSource.FREEZE, 1.0F);
                             entity.setInPowderSnow(true);
                             SpawnSnowParticlesPacket.send(player, entity);
-                            TntEntity tntEntity = new TntEntity(null, 0,0,0, null);
-                            tntEntity.invi
-
                         }
                     }
                 } else if (EnchantmentHelper.getLevel(DTEnchantments.RADIANCE, trinketInventory.get(slot).getRight()) == 1) {
@@ -91,32 +88,6 @@ public abstract class PlayerEntityMixin extends LivingEntityMixin {
     public boolean canWalkOnFluid(Fluid fluid) {
         return this.walkOnFluid;
     }
-
-
-//    @Shadow public abstract boolean isPlayer();
-//    private boolean walkOnFluid = false;
-//
-//    @Inject(method = "tickMovement", at = @At("HEAD"))
-//    public void checkRings(CallbackInfo callbackInfo) {
-//        final Optional<TrinketComponent> trinketComponent = TrinketsApi.getTrinketComponent((PlayerEntity) (Object) this);
-//        if ((Object) this instanceof PlayerEntity player && trinketComponent.isPresent()) {
-//            final TrinketComponent component = trinketComponent.get();
-//            for (Item item: ModTags.RINGS.values()) {
-//                if (component.isEquipped(item) && player.isTouchingWater()) {
-//                    final int slot = component.getAllEquipped().get(0).getRight().getItem() instanceof MithrilWaistcoatItem ? 1 : 0;
-//                    if (EnchantmentHelper.getLevel(DTEnchantments.HOLY, component.getAllEquipped().get(slot).getRight()) == 1) {
-//                        if (player.isSubmergedInWater()) {
-//                            player.jump();
-//                        } else {
-//                            this.walkOnFluid = true;
-//                        }
-//                    }
-//                } else {
-//                    this.walkOnFluid = false;
-//                }
-//            }
-//        }
-//    }
 
 
 

@@ -46,12 +46,9 @@ public class FilledGobletItem extends BlockItem {
         if (ModTags.MILK_GOBLETS.contains(item)) {
             user.clearStatusEffects();
         }
-
-
         if (item == DTObjects.DEBRIS_GOBLET_OF_LAVA_ITEM || item == DTObjects.NETHERITE_GOBLET_OF_LAVA_ITEM) {
             DTUtil.onDrinkingLava((PlayerEntity) user);
         }
-
         final PlayerEntity playerEntity = user instanceof PlayerEntity ? (PlayerEntity) user : null;
         return emptyGoblet(playerEntity, user, stack, world);
     }
